@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 
 #---- some preliminary analysis to see how the data looks ----
-day_one <- read_csv("heart_rate_2025-07-01.csv")
+day_one <- read_csv("data/raw/heart_rate_2025-07-01.csv")
 
 # seeing change in heart rate over course of day
 plot1 <- ggplot(day_one) + 
@@ -13,8 +13,8 @@ plot1 <- ggplot(day_one) +
  plot1  
  
  # merging multiple files together
- day_two <- read_csv("heart_rate_2025-07-02.csv")
- day_three <- read_csv("heart_rate_2025-07-03.csv")
+ day_two <- read_csv("data/raw/heart_rate_2025-07-02.csv")
+ day_three <- read_csv("data/raw/heart_rate_2025-07-03.csv")
  
  combined_table <- bind_rows(day_one, day_two, day_three)
  
