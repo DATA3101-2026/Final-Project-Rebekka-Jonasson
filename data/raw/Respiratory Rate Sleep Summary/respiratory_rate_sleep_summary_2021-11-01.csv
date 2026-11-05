@@ -1,0 +1,13 @@
+timestamp,deep sleep stats - milli breaths per minute,deep sleep stats - standard deviation milli breaths per minute,deep sleep stats - signal to noise,light sleep stats - milli breaths per minute,light sleep stats - standard deviation milli breaths per minute,light sleep stats - signal to noise,rem sleep stats - milli breaths per minute,rem sleep stats - standard deviation milli breaths per minute,rem sleep stats - signal to noise,full sleep stats - milli breaths per minute,full sleep stats - standard deviation milli breaths per minute,full sleep stats - signal to noise,data source
+2021-11-01T06:14:30Z,12.2,1.2,10.016,0.0,0.0,0.0,13.0,2.0,3.096,14.4,0.6,4.134,Google Health App
+2021-11-11T06:16:30Z,12.8,1.2,6.139,0.0,0.0,0.0,-1.0,0.0,2.063,13.8,0.9,10.896,Google Health App
+2021-11-16T06:18:30Z,12.2,1.3,4.267,0.0,0.0,0.0,11.2,0.5,3.291,12.2,1.3,4.267,Google Health App
+2021-11-17T06:17:00Z,12.0,1.5,5.27,0.0,0.0,0.0,11.8,0.8,3.05,13.0,0.8,4.813,Google Health App
+2021-11-18T06:24:30Z,12.0,0.7,5.201,0.0,0.0,0.0,12.8,2.0,3.01,13.4,0.8,9.453,Google Health App
+2021-11-19T06:26:30Z,11.8,1.1,7.574,0.0,0.0,0.0,13.0,0.6,2.572,12.0,0.6,4.437,Google Health App
+2021-11-22T06:19:00Z,12.2,0.8,8.813,0.0,0.0,0.0,16.6,1.4,3.375,12.4,0.8,4.846,Google Health App
+2021-11-23T06:25:00Z,11.8,0.9,9.649,0.0,0.0,0.0,11.0,0.7,3.674,13.2,1.0,10.807,Google Health App
+2021-11-24T06:26:00Z,12.4,1.5,6.475,0.0,0.0,0.0,11.4,1.0,2.772,12.4,1.5,6.475,Google Health App
+2021-11-26T12:02:30Z,12.6,1.5,5.168,0.0,0.0,0.0,14.8,2.0,3.397,12.4,0.7,5.762,Google Health App
+2021-11-27T10:49:00Z,12.2,1.2,4.639,0.0,0.0,0.0,15.0,1.6,2.892,13.0,1.1,7.062,Google Health App
+2021-11-29T06:13:00Z,12.4,1.3,6.467,0.0,0.0,0.0,12.0,0.7,2.586,13.0,0.9,6.384,Google Health App

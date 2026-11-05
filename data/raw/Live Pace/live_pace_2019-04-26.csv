@@ -1,0 +1,7 @@
+timestamp,steps,distance millimeters,altitude gain millimeters,data source
+2019-04-26T19:17:01Z,2,340,0,Blaze
+2019-04-26T19:17:02Z,2,0,0,Blaze
+2019-04-26T19:17:03Z,2,0,0,Blaze
+2019-04-26T19:17:04Z,2,0,-304,Blaze
+2019-04-26T19:17:05Z,2,0,304,Blaze
+2019-04-26T19:17:06Z,1,0,-304,Blaze

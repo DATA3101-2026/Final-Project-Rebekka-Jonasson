@@ -1,0 +1,10 @@
+timestamp,steps,distance millimeters,altitude gain millimeters,data source
+2021-09-20T19:36:56Z,3,0,0,Versa 2
+2021-09-20T19:36:57Z,1,130,609,Versa 2
+2021-09-20T19:36:58Z,2,270,1524,Versa 2
+2021-09-20T19:36:59Z,2,470,0,Versa 2
+2021-09-20T19:37:00Z,1,630,-609,Versa 2
+2021-09-20T19:37:01Z,2,850,-914,Versa 2
+2021-09-20T19:37:02Z,1,960,-609,Versa 2
+2021-09-20T19:37:03Z,2,1020,304,Versa 2
+2021-09-20T19:37:04Z,1,970,304,Versa 2

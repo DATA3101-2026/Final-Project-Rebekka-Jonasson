@@ -1,0 +1,9 @@
+timestamp,steps,distance millimeters,altitude gain millimeters,data source
+2023-07-01T01:14:56Z,0,0,0,Sense 2
+2023-07-01T01:14:57Z,0,0,0,Sense 2
+2023-07-01T01:14:58Z,0,0,0,Sense 2
+2023-07-01T01:14:59Z,0,0,-609,Sense 2
+2023-07-01T01:15:00Z,0,0,0,Sense 2
+2023-07-01T01:15:01Z,0,0,609,Sense 2
+2023-07-01T01:15:02Z,0,0,0,Sense 2
+2023-07-01T01:15:03Z,0,0,304,Sense 2
