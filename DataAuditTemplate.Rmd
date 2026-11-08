@@ -1,11 +1,11 @@
 ---
-title: "Data Audit & Overview Template" # Replace with something more relevant
-author: "Your name here"
-date: "`r format(Sys.Date(), '%d %B %Y')`" # What does this do? What is Sys.Date()?
+title: "Data Audit & Overview Template Of My Archaeology Health Data" 
+author: "Rebekka Jonasson"
+date: "`r format(Sys.Date(), '%d %B %Y')`" #gets the current date
 
 format: 
   gfm: 
-    toc: true # What is TOC in this scenerio? Render this template and see what happens when you turn it to false.
+    toc: true # Table of contents
     df_print: kable
 ---
 
@@ -13,11 +13,14 @@ format:
 knitr::opts_chunk$set( # You may not have seen this series of options before, test out knitting the md file and changing the T/F values!
   echo = FALSE,        
   message = FALSE,
-  warning = FALSE
+  warning = TRUE
 ) 
 
 # Declare every package you use at the top.
 library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
 # library(sf)        # if you are working with spatial data, this is a very useful base package!
 # library(readxl)    # if any source arrives as a spreadsheet, this helps with excel files. 
 # library(readr)     # Another useful package, this can help with csv files etc.
@@ -59,7 +62,7 @@ My physical activity data, including heart rate, calories, and respiratory rate 
 ```{r source-summary, echo=FALSE}
 sources <- tribble(
   ~Source,            ~Producer,          ~Format,  ~Coverage,          ~Using,
-  "[source name]",    "[organization]",   "[CSV]",  "[place, years]",   "Yes",
+  "Google Health",    "Google Health",   "[CSV]",  "[FitBit watch, 2018-2026]",   "Yes",
   "[source name]",    "[organization]",   "[PDF]",  "[place, years]",   "Yes",
   "[source name]",    "[organization]",   "[API]",  "[place, years]",   "No, see 2.4"
 )
@@ -67,23 +70,21 @@ sources <- tribble(
 knitr::kable(sources)
 ```
 
-## 2.2.1: \[name 1\]
+## 2.2.1: Google Health Data
 
-**Producer and authority.** \[Who made this dataset, under what grant, mandate, legal authority, initiative, etc. Ex: If a municipality publishes it, which department, and were they required to? If a researcher published it, what grant was it under? If it's an open source publication from an organization, do they describe why it is published?\]
+**Producer and authority.** The data was collected by Fitibit, and later Google Health. It is not public data by default (thought users can publish their own health data collected if they so choose. This data is my own dataset that I have full legal authority over, and I am using it for a class project.
 
-**Original Dataset Purpose.** The data was collected by my Fitbit watch into the Fitbit app (which later merged with Google Health) so that I, the user, can see my health data and compare it to past data. 
+**Original Dataset Purpose.** The data was collected by my Fitbit watch into the Fitbit app (which later merged with Google Health) so that I, the user, can see my health data and compare it to past data.
 
-**Collection method.** \[How did the values collected get into the file? Sensor, survey, administrative by-product, manual entry, something nobody can tell you? Remember that no answer found is still and answer!\]
-The data was collected by my Sense 2 Fitbit watch using built in sensors. 
+**Collection method.** The data was collected by my FitBit watch via sensor\[How did the values collected get into the file? Sensor, survey, administrative by-product, manual entry, something nobody can tell you? Remember that no answer found is still and answer!\] The data was collected by my Sense 2 Fitbit watch using built in sensors that monitor heart rate, skin temperature and more.
 
 **Coverage and resolution.** \[Spatial extent, temporal range, reporting frequency, unit of observation.\]
 
-**Licence.** \[Find the licence declaration and put the shorthand here. If you cannot find it, say here and complete section 3.2.\]
+**Licence.** \[Find the licence declaration and put the shorthand here. If you cannot find it, say here and complete section 3.2.\] As it is my own data, I do not need to worry about a license.
 
 **Access.** \[How you got it, and whether a future user could get it the same way. Include the date you retrieved it if it is from a website, as sometimes web portals or search algorithms can change and make your first search method difficult to replicate.\] Anyone with the same or similar type of watch can access their data by downloading it from their account. Specifics on how to do that likely varies depending on which company holds the data.
 
-**Known problems.** \[What is wrong with it on a first look-through? Are there any missing years, survey answers, changed definitions, inconsistent identifiers, or NA values, etc. in the dataset?\]
-The data is only collected when I wear my watch, meaning that there are many instances of missing data. Additionally, the sensors sometimes get confused, such as counting me tapping my hand as steps. 
+**Known problems.** \[What is wrong with it on a first look-through? Are there any missing years, survey answers, changed definitions, inconsistent identifiers, or NA values, etc. in the dataset?\] The data is only collected when I wear my watch, meaning that there are many instances of missing data. Additionally, the sensors sometimes get confused, such as counting me tapping my hand as steps.
 
 ```{r source-1-load}
 # Load the RAW file, as received into this code block. The code below when uncommented will read it from your final project / RProject folder, and show the first x (in this case I've piped to show 6) lines. Change as needed.
@@ -100,8 +101,7 @@ The data is only collected when I wear my watch, meaning that there are many ins
 
 ## 2.2.2 \[name 2\]
 
-\[Repeat the full structure above for every source you are using. Copy the headings and the loaded source's descriptive sentences below.\]
-**Producer and authority.** \[Who made this dataset, under what grant, mandate, legal authority, initiative, etc. Ex: If a municipality publishes it, which department, and were they required to? If a researcher published it, what grant was it under? If it's an open source publication from an organization, do they describe why it is published?\]
+\[Repeat the full structure above for every source you are using. Copy the headings and the loaded source's descriptive sentences below.\] **Producer and authority.** \[Who made this dataset, under what grant, mandate, legal authority, initiative, etc. Ex: If a municipality publishes it, which department, and were they required to? If a researcher published it, what grant was it under? If it's an open source publication from an organization, do they describe why it is published?\]
 
 **Original Dataset Purpose.** \[Why was this collected? The original author likely didn't have the exact same research question as you.\]
 
@@ -171,11 +171,11 @@ knitr::kable(licences)
 
 \[If your data does not describe people, say so explicitly and explain why you are confident of that then move on.\]
 
-**Consent.** \[If you collected it: what participants agreed to your survey, and how was their data and consent was recorded. If someone else collected it: what were people told at the time, and does your use fall inside that? If it is your own data, what are you comfortable with people using it for in the future if someone else downloaded it?\]
+**Consent.** \[If you collected it: what participants agreed to your survey, and how was their data and consent was recorded. If someone else collected it: what were people told at the time, and does your use fall inside that? If it is your own data, what are you comfortable with people using it for in the future if someone else downloaded it?\] The health data is my own, and as I am the one analysing it, I consented to put any information included in this project.
 
-**Identifiability.** \[How many people are in the smallest reported cell? How small is the population of the place or community you are describing? If it does reference people's data in a public manner (sports stats like goals or time), that is public data. If it is a conversation from a person who did not consent for their interview to be shared, it's not.\]
+**Identifiability.** \[How many people are in the smallest reported cell? How small is the population of the place or community you are describing? If it does reference people's data in a public manner (sports stats like goals or time), that is public data. If it is a conversation from a person who did not consent for their interview to be shared, it's not.\] The data collected is from one person (myself).
 
-**How sensitive data will be used.** \[Suppression of identifiable information in your published dataset, aggregation to a coarser unit (bigger groups etc), withholding identifying variables, or a decision not to publish part of the dataset.\]
+**How sensitive data will be used.** \[Suppression of identifiable information in your published dataset, aggregation to a coarser unit (bigger groups etc), withholding identifying variables, or a decision not to publish part of the dataset.\] Sensitive data was taken out of my health data before I uploaded it to this project.
 
 ------------------------------------------------------------------------
 
@@ -187,23 +187,23 @@ knitr::kable(licences)
 
 ## 5.2: Who could be harmed
 
-\[Name a plausible misuse and who would be on the receiving end. Think about parties with an interest in the subject you chose, who are not your intended audience.\]
+\[Name a plausible misuse and who would be on the receiving end. Think about parties with an interest in the subject you chose, who are not your intended audience.\]Someone could misuse this data to make an analysis of my health and me as a person without my permission.
 
 ## 5.3: Unreleased working data
 
-\[If there is anything in your working data you would not publish, say what it was and why. If there is nothing, describe why it is okay to publish the working / raw dataset.\]
+\[If there is anything in your working data you would not publish, say what it was and why. If there is nothing, describe why it is okay to publish the working / raw dataset.\] I would not publish any data that is not from the specific period's in time that I am analysing (i.e. when I was doing archaeology, and any other periods of time I may use to compare against) as it is not relevant to the project.
 
 ------------------------------------------------------------------------
 
 # 6: Data Stewardship
 
-**Where it lives.** \[Repository, platform, or institution. It's okay to be realisitic about the project after this course ends, as a GitHub account you stop paying attention to in January is a real answer.\]
+**Where it lives.** \[Repository, platform, or institution. It's okay to be realisitic about the project after this course ends, as a GitHub account you stop paying attention to in January is a real answer.\] My personal health data will be on the Github repository. This repository will likely not be touched after December.
 
-**Who maintains it.** \[If nobody, say nobody.\]
+**Who maintains it.** \[If nobody, say nobody\] My personal health data will not be updated after this class project ends.
 
-**Formats and dependencies.** \[Will your files open in ten years? Consider what could break if someone tried it in 2036. The package versions, data format, API, links to sources etc.\]
+**Formats and dependencies.** \[Will your files open in ten years? Consider what could break if someone tried it in 2036. The package versions, data format, API, links to sources etc.\] My personal health data is in csv files and will be possible to open at any point.
 
-**Lifespan.** \[How long is this meaningfully usable before it needs updating or should be retired?\]
+**Lifespan.** \[How long is this meaningfully usable before it needs updating or should be retired?\] The data I'm looking it is contained to specific periods of time, and therefore will not be updated. It contains data up until October 2026, and any data analysis for a time period after that cannot be done.
 
 ------------------------------------------------------------------------
 

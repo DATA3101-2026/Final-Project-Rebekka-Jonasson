@@ -1,6 +1,25 @@
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(readr)
+
+
+#---- testing the new merge.csv file ----
+merged <- read_csv("merged.csv")
+
+merged %>%
+  filter(timestamp > ymd_hms("2025-01-01 00:00:00")) %>%
+  ggplot(aes(x = timestamp, y = "beats_per_minute")) +
+  geom_line()
+ 
+filtered_merge <- merged %>%
+  filter(timestamp > ymd_hms("2025-06-30 00:00:00"), timestamp > ymd_hms("2025-07-26 00:00:00"),between(hour(timestamp), 6, 12))
+
+
+plot3 <- ggplot(filtered_merge)+
+  geom_area(mapping = aes(x = `beats per minute`, y = timestamp, colour = `data source`)) + 
+  labs(x = "beats per minute", y = "timestamp in second", title = "Heart Rate", subtitle = "Heart Rate Over A Month")
+plot3
 
 #---- some preliminary analysis to see how the data looks ----
 day_one <- read_csv("data/raw/heart_rate_2025-07-01.csv")
