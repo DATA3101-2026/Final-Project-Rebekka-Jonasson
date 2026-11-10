@@ -43,7 +43,7 @@ This document will live in your final project folder in your repository alongsid
 
 # 1: Project Overview
 
-Analysis of my health data while doing archaeology in Southern Italy during July 2025 and June 2026. This will be looking at factors such as my heart rate data.
+Analysis of my health data while doing archaeology in Southern Italy during July 2025 and June 2026. This will be looking at factors such as my heart rate data, step count, and the temperature of the local area.
 
 ------------------------------------------------------------------------
 
@@ -62,9 +62,9 @@ My physical activity data, including heart rate, calories, and respiratory rate 
 ```{r source-summary, echo=FALSE}
 sources <- tribble(
   ~Source,            ~Producer,          ~Format,  ~Coverage,          ~Using,
-  "Google Health",    "Google Health",   "[CSV]",  "[FitBit watch, 2018-2026]",   "Yes",
-  "[source name]",    "[organization]",   "[PDF]",  "[place, years]",   "Yes",
-  "[source name]",    "[organization]",   "[API]",  "[place, years]",   "No, see 2.4"
+  "Google Health",    "Google Health",   "CSV",  "FitBit watch, 2018-2026",   "Yes",
+  "Open Meteo",    "Open-Meteo GmbH",   "CSV",  "[Torre Mordillo, 2025-2026",   "Yes",
+  "Meteo Blue",    "Meteo BLue",   "CSV",  "Spezzano Albanese, 2025-2026",   "No, see 2.4"
 )
 
 knitr::kable(sources)
@@ -99,19 +99,19 @@ knitr::kable(sources)
 
 \[One or two sentences on what the output above shows. Feel free to note anything new or hard for you to initially understand in the structure, types, source, or size.\]
 
-## 2.2.2 \[name 2\]
+## 2.2.2 Open Meteo
 
 \[Repeat the full structure above for every source you are using. Copy the headings and the loaded source's descriptive sentences below.\] **Producer and authority.** \[Who made this dataset, under what grant, mandate, legal authority, initiative, etc. Ex: If a municipality publishes it, which department, and were they required to? If a researcher published it, what grant was it under? If it's an open source publication from an organization, do they describe why it is published?\]
 
-**Original Dataset Purpose.** \[Why was this collected? The original author likely didn't have the exact same research question as you.\]
+**Original Dataset Purpose.** Open source weather and climate data for researchers to use.
 
-**Collection method.** \[How did the values collected get into the file? Sensor, survey, administrative by-product, manual entry, something nobody can tell you? Remember that no answer found is still and answer!\]
+**Collection method.** Collected from 30 different national and international weather models.
 
-**Coverage and resolution.** \[Spatial extent, temporal range, reporting frequency, unit of observation.\]
+**Coverage and resolution.**Open Meteo has worldwide coverage and high resolution weather models, however I specifically am only looking at the weather at Torre Mordillo in specific months in the summers of 2025 and 2026. 
 
-**Licence.** \[Find the licence declaration and put the shorthand here. If you cannot find it, say here and complete section 3.2.\]
+**Licence.**Open source, API data offered under Attribution International (CC BY 4.0)
 
-**Access.** \[How you got it, and whether a future user could get it the same way. Include the date you retrieved it if it is from a website, as sometimes web portals or search algorithms can change and make your first search method difficult to replicate.\]
+**Access.** I got it by downloading from the Open-Meteo Historical Weather API webpage (https://open-meteo.com/en/docs/historical-weather-api), and picking the time period, and the specific longitude and latitude. 
 
 **Known problems.** \[What is wrong with it on a first look-through? Are there any missing years, survey answers, changed definitions, inconsistent identifiers, or NA values, etc. in the dataset?\]
 
@@ -129,14 +129,7 @@ knitr::kable(sources)
 \[One or two sentences on what the output above shows. Feel free to note anything new or hard for you to initially understand in the structure, types, source, or size.\]
 
 ## 2.3: Investigated and rejected sources
-
-\[One or two sentences per rejected source: what it was, why you checked it out. Some examples: licensing permissions, resolution mismatch, paywall, abandoned since 2017, aggregated beyond its usefulness, changed project idea, etc.
-
-Documenting why a source was rejected saves the next person the time you spent finding out the best source for your project. Negative results are not bad news!\]
-
-## 2.4: What I could not find
-
-\[If you changed your project idea due to lack of data, explain what you expected to find more easily but does not, or exists and is not obtainable. Name who holds it, if you know the source. Absence is a finding about how an organization or community's data is managed.\]
+I first tried to download weather data from Meteo Blue as it had data for Torre Mordillo, however on the download data page would not allow me to specify a location to download data for without making an account.
 
 ------------------------------------------------------------------------
 
