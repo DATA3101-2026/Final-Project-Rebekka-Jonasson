@@ -1,0 +1,20 @@
+timestamp,deep sleep stats - milli breaths per minute,deep sleep stats - standard deviation milli breaths per minute,deep sleep stats - signal to noise,light sleep stats - milli breaths per minute,light sleep stats - standard deviation milli breaths per minute,light sleep stats - signal to noise,rem sleep stats - milli breaths per minute,rem sleep stats - standard deviation milli breaths per minute,rem sleep stats - signal to noise,full sleep stats - milli breaths per minute,full sleep stats - standard deviation milli breaths per minute,full sleep stats - signal to noise,data source
+2021-09-08T06:16:00Z,13.2,1.2,6.593,0.0,0.0,0.0,12.2,0.7,3.589,14.0,1.0,9.924,Google Health App
+2021-09-09T06:21:30Z,12.4,1.8,4.44,0.0,0.0,0.0,-1.0,0.0,2.423,14.2,1.1,14.963,Google Health App
+2021-09-10T06:21:00Z,12.0,1.1,5.272,0.0,0.0,0.0,14.2,0.5,2.821,12.0,1.1,5.272,Google Health App
+2021-09-11T10:16:30Z,12.0,1.1,6.661,0.0,0.0,0.0,12.6,0.7,2.854,12.6,1.2,6.654,Google Health App
+2021-09-13T07:36:00Z,12.4,1.4,4.818,0.0,0.0,0.0,11.6,0.6,2.883,14.6,1.3,6.737,Google Health App
+2021-09-14T07:35:30Z,13.4,1.2,5.677,0.0,0.0,0.0,-1.0,0.0,1.218,13.4,1.2,5.677,Google Health App
+2021-09-15T07:03:00Z,12.2,1.0,6.144,0.0,0.0,0.0,-1.0,0.0,2.394,13.0,0.7,5.024,Google Health App
+2021-09-16T07:33:30Z,11.6,1.1,11.014,0.0,0.0,0.0,-1.0,0.0,2.394,13.0,0.9,6.713,Google Health App
+2021-09-17T07:37:30Z,13.0,1.4,7.537,0.0,0.0,0.0,-1.0,0.0,2.453,12.8,0.7,7.364,Google Health App
+2021-09-20T06:07:00Z,12.8,1.0,4.62,0.0,0.0,0.0,17.4,0.6,3.83,13.4,1.1,5.091,Google Health App
+2021-09-21T06:12:30Z,12.0,1.1,4.212,0.0,0.0,0.0,12.6,1.2,4.28,14.0,1.0,8.214,Google Health App
+2021-09-22T07:15:30Z,12.4,0.8,7.772,0.0,0.0,0.0,14.2,2.0,3.563,12.2,0.7,7.284,Google Health App
+2021-09-23T06:16:30Z,13.0,1.5,6.673,0.0,0.0,0.0,13.2,1.7,3.118,13.8,0.9,4.822,Google Health App
+2021-09-24T06:14:00Z,12.6,0.9,4.909,0.0,0.0,0.0,16.2,2.0,3.778,13.8,0.8,5.338,Google Health App
+2021-09-25T09:12:30Z,13.2,1.2,5.957,0.0,0.0,0.0,14.6,2.8,3.436,13.2,1.0,4.544,Google Health App
+2021-09-26T10:37:30Z,13.6,1.5,8.266,0.0,0.0,0.0,-1.0,0.0,1.446,13.8,1.0,4.381,Google Health App
+2021-09-28T06:13:30Z,12.8,1.3,5.09,0.0,0.0,0.0,11.6,0.6,2.958,12.6,1.0,6.67,Google Health App
+2021-09-29T06:15:30Z,12.6,1.3,7.326,0.0,0.0,0.0,12.6,0.4,2.595,12.4,0.5,4.363,Google Health App
+2021-09-30T06:15:30Z,12.2,1.1,5.829,0.0,0.0,0.0,12.6,1.2,4.879,12.8,1.0,5.569,Google Health App

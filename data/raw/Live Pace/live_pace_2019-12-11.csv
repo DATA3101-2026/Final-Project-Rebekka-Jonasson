@@ -1,0 +1,4 @@
+timestamp,steps,distance millimeters,altitude gain millimeters,data source
+2019-12-11T19:47:50Z,1,1210,0,Versa 2
+2019-12-11T19:47:51Z,1,1130,0,Versa 2
+2019-12-11T19:47:52Z,0,890,0,Versa 2

@@ -1,13 +1,14 @@
 # AI-log
 
-2026-10-28
+2026-11-10
 
 # Instructions
 
-Remember to use this to log your project process every time you use AI.
-Each time you add a row, commit it, with relevant notes about updating
-the log. This allows me to be able to see how you worked through
-problems if using LLMs.
+I have not used AI in this project.
+
+------------------------------------------------------------------------
+
+# AI Log
 
 | Date | Stage | Tool | What I asked | What I did with it |
 |------|-------|------|--------------|--------------------|
