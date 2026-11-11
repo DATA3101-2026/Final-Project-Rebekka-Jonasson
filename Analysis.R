@@ -42,3 +42,4 @@ plot1 <- ggplot(day_one) +
    labs(x = "beats per minute", y = "timestamp in seconds", title = "Heart Rate", subtitle = "Heart Rate Over the course of 3 days")
  
  plot2  
+ 
